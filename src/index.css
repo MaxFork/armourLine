@@ -1,3 +1,8 @@
+:root{
+  --mainT: all 0.3s linear;
+  --mainRed:  #7e0000;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +10,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  box-sizing: border-box;
+  background-color: #eee;
+  height: 100%;
+  width: 100%;
+  color: #212529;
+  overflow-x: hidden;
 }
