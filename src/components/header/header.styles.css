@@ -27,7 +27,7 @@
     font-size: 40px;
 }
 .mobile-container{
-    transform: translateX(-600px);
+    transform: translateX(-1100px);
     position: fixed;
     top: 0%;
     z-index: 4;
