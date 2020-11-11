@@ -99,13 +99,13 @@ export default function MiddleCarousel() {
             {
             feature.map((item, idx) => (
                 <div ref={el => containerRef.current[idx] = el} key={item.id} id={item.id} className="feature p-2 mx-5">
-                <div className="icon-container text-center my-3">
-                    {item.icon}
-                </div>
-                <div className="feature-content text-center">
-                    <h2 className="display-4 my-3"> {item.title} </h2>
-                    <p> {item.desc} </p>
-                </div>
+                    <div className="icon-container text-center my-3">
+                        {item.icon}
+                    </div>
+                    <div className="feature-content text-center">
+                        <h2 className="display-4 my-3"> {item.title} </h2>
+                        <p> {item.desc} </p>
+                    </div>
                 </div>
             ))
             }

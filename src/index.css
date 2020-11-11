@@ -1,6 +1,7 @@
 :root{
   --mainT: all 0.3s linear;
-  --mainRed:  #7e0000;
+  --mainRed:  #FF362E;
+  --bgColor: #eee;
 }
 
 body {
@@ -12,8 +13,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   background-color: #eee;
-  height: 100%;
+  background-color: #DAE0E2;
+  /* background-color: black; */
+  min-height: 100vh;
   width: 100%;
   color: #212529;
-  overflow-x: hidden;
+  /* color: white; */
+  overflow-x: hidden !important;
 }

@@ -1,0 +1,55 @@
+.grid-container{
+    display: grid;
+    place-items: center;
+}
+.slide-container{
+    height: 360px;
+    padding: 20px 0;
+    width: 68%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    position: relative;
+    font-size: 0;
+    perspective: 500px;
+    overflow: hidden;
+    display: flex;
+}
+.slide-container .box{
+    background: rgba(255, 255, 255, 0.1);
+    min-width: 280px;
+    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    font-size: 80px;
+    position: relative;
+    border-radius: 2px;
+    margin: 0 15px;
+    background-color: #eee;
+}
+.slide-container .box .feature-content h2, .slide-container .box .feature-content p{
+    pointer-events: none;
+}
+.slide-container .box .icon-container{
+    display: block;
+}
+.active-text-carousel{
+    background: rgba(255, 255,255,0.3);
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+}
+.desktop-buttons span, .threebutton-container span, .current-slide-container span{
+    display: inline-block;
+    background-color: #DAE0E2;
+    width: 15px;
+    height: 12px;
+    cursor: pointer;
+}
+.desktop-buttons span:hover, .threebutton-container span:hover, .current-slide-container span:hover{
+    background-color: var(--mainRed);
+}

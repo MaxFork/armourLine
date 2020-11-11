@@ -1,0 +1,34 @@
+.find-vehicle-container{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #eee;
+    opacity: 0.8;
+}
+.select-make select::after,.select-model select::after, .select-year select::after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-right: solid 1px #444;
+    height: 44px;
+    width: 40px;
+    content: 'a';
+}
+.select-make select,.select-model select,.select-year select{
+    background-color: #fff;
+    border: 1px solid #666;
+    border-radius: 10px;
+    position: relative;
+    font-size: 17px;
+    height: 44px;
+    width: 175px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    color: #212529;
+}
+.select-make select:focus,.select-model select:focus,.select-year select:focus{
+    border-color:#666;
+    box-shadow: none;
+}
+.find-vehicle-heading h3{
+    font-size: 1.3rem;
+}

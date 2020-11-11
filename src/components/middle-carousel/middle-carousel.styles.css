@@ -4,7 +4,7 @@
     margin: auto;
 }
 .feature{
-    background-color: #DAE0E2;
+    background-color: var(--bgColor);
     min-width: 281px;
 }
 .feature:hover p{
@@ -39,13 +39,13 @@
 }
 .desktop-buttons span, .threebutton-container span, .current-slide-container span{
     display: inline-block;
-    background-color: #DAE0E2;
+    background-color: var(--bgColor) !important;
     width: 15px;
     height: 12px;
     cursor: pointer;
 }
 .desktop-buttons span:hover, .threebutton-container span:hover, .current-slide-container span:hover{
-    background-color: var(--mainRed);
+    background-color: var(--mainRed) !important;
 }
 .active-square{
     background-color: var(--mainRed) !important; 

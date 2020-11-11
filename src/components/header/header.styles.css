@@ -1,12 +1,17 @@
+.nav-main-container{
+    background-color: #DAE0E2;
+}
 .nav-main-container .nav-list-container .display-4{
     font-size: 1.5rem;
 }
 .logo-heading{
     color: var(--mainRed);
     font-size: 3rem;
+    font-weight: inherit;
 }
 .logo-heading span{
-    color: #212529;
+    /* color: #212529; */
+    color: white;
 }
 .nav-list-ul{
     list-style: none;
@@ -30,7 +35,7 @@
     transform: translateX(-1100px);
     position: fixed;
     top: 0%;
-    z-index: 4;
+    z-index: 20;
     background: white;
     height: 100vh;
     transition: var(--mainT);
