@@ -8,3 +8,6 @@
     background: transparent;
     color: var(--mainRed);
 }
+.custom-button:focus{
+    box-shadow: none;
+}

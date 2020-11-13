@@ -16,8 +16,12 @@
     background-repeat: no-repeat;
     position: relative;
 }
+.slide .img-container{
+    overflow: hidden;
+}
 .slide .img-container img{
     width: 100%;
+    overflow: hidden;
 }
 .slide-content{
     display: flex;
@@ -29,20 +33,18 @@
     font-size: 5rem;
     color: #fff;
 }
-.carousel-buttons{
-    width: 100%;
-}
-.carousel-buttons span{
-    display: inline-block;
+
+.slide .img-container .slick-dots li{
     background-color: var(--bgColor);
     width: 15px;
-    height: 12px;
-    cursor: pointer;
+    height: 16px;
 }
-.carousel-buttons span:hover{
+.slide .img-container .slick-dots li button::before,.slide .img-container  .slick-dots li button::after{
+    color: var(--bgColor);
+}
+.slide .img-container li.slick-active {
     background-color: var(--mainRed);
-    transition: var(--mainT);
 }
-.active-square{
-    background-color: var(--mainRed) !important; 
+.slide .img-container .slick-dots li.slick-active button::before,.slide .img-container .slick-dots li.slick-active button::after{
+    color: var(--mainRed);
 }

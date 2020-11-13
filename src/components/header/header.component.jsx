@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { Link } from "react-router-dom";
 
 import "./header.styles.css"
 
@@ -22,13 +23,13 @@ export default function Header() {
                     </svg>
                 </div>
                 <nav>
-                    <h1 className="display-3 logo-heading">Armour<span>Line</span></h1>
+                    <h1 className="display-3 logo-heading"><Link to="/">Armour<span>Line</span></Link></h1>
                 </nav>
                 <div className="nav-list-container">
-                    <ul className="nav-list-ul d-flex justify-content-around p-0 mt-3">
-                        <li className="display-4 mx-4">Home</li>
-                        <li className="display-4 mx-4">About&nbsp;Us</li>
-                        <li className="display-4 mx-4">Contact</li>
+                    <ul className="nav-list-ul d-flex justify-content-around p-0 mt-4">
+                        <li className="display-4 mx-4"><Link to="/">Home</Link></li>
+                        <li className="display-4 mx-4"><Link>About&nbsp;Us</Link></li>
+                        <li className="display-4 mx-4"><Link>Contact</Link></li>
                     </ul>
                 </div>
             </div>
@@ -41,9 +42,9 @@ export default function Header() {
                         x  
                     </div>
                     </li>
-                    <a href=""><li className="link display-4">Home</li></a>
-                    <a href=""><li className="link display-4">About&nbsp;Us</li></a>
-                    <a href=""><li className="link display-4">Contact</li></a>
+                    <Link to="/"><li className="link display-4">Home</li></Link>
+                    <Link ><li className="link display-4">About&nbsp;Us</li></Link>
+                    <Link ><li className="link display-4">Contact</li></Link>
                 </ul>
             </div>
         </header>

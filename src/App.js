@@ -1,22 +1,23 @@
 import React from 'react';
+import { Route, Switch } from "react-router-dom"
 
 import './App.css';
-import Carousel from './components/carousel/carousel.component';
 import Header from "./components/header/header.component"
-import MiddleCarousel from "./components/middle-carousel/middle-carousel.component"
-import TextCarousel from './components/text-carousel/text-carousel.component';
-import FindVehicle from "./components/find-vehicle/find-vehicle.component"
 import ProductItem from './components/product-item/product-item.component';
+import Homepage from './pages/homepage.component';
+import ProductForm from "./components/product-form/product-form.component";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <FindVehicle />
-      <Carousel />
-      <MiddleCarousel/>
-      <TextCarousel/>
-      <ProductItem/>
+      <div>
+        <Switch>
+          <Route exact path="/" component={Homepage} /> 
+          <Route path="/product" component={ProductItem} />
+          <Route path="/product-form" component={ProductForm} />
+        </Switch>
+      </div>
     </div>
   );
 }

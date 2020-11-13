@@ -1,0 +1,12 @@
+.login-form-input{
+    border: 0;
+    background-color: var(--mainBgColor);
+    border-bottom: 1px solid var(--mainRed);
+    color: var(--mainBlack) !important;
+    font-size: 2rem;
+}
+.login-form-input:focus{
+    box-shadow: none;
+    border-bottom: 1px solid var(--mainRed);
+    background-color: var(--mainBgColor);
+}

@@ -1,8 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from "react-router-dom"
 
 import "./find-vehicle.styles.css"
+import CustomButton from "../custom-button/custom-button.component"
 
-export default function FindVehicle() {
+function FindVehicle() {
 
     const [make, setMake] = useState([
         {id: 1, carName: "Acura"},
@@ -46,72 +48,16 @@ export default function FindVehicle() {
         {id: "Volkswagen", models: [{id: 1, name: "Jetta"},{id: 2, name: "Passat"}]},
     ])
 
-    const [modelYear, setModelYear] = useState([
-        {id: "MDX", makeName:"Acura", year: ["2015"]},
-        {id: "RDX", makeName:"Acura", year: ["2013", "2019"]},
-        {id: "TLX", makeName:"Acura", year: ["2015"]},
-        {id: "F150", makeName:"Ford", year: ["2015"]},
-        {id: "Explorer", makeName:"Ford", year: ["2015"]},
-        {id: "CRV", makeName:"Honda", year: ["2017"]},
-        {id: "Odyssey", makeName:"Honda", year: ["2011", "2018"]},
-        {id: "F-Pace", makeName:"Jaguar", year: ["2017"]},
-        {id: "Sportage", makeName:"Kia", year: ["2017"]},
-        {id: "Sorento", makeName:"Kia", year: ["2016"]},
-        {id: "CX9", makeName:"Mazda", year: ["2016"]},
-        {id: "WRX", makeName:"Subaru", year: ["2015"]},
-        {id: "Pilot", makeName:"Honda", year: ["2016"]},
-        {id: "Highlander", makeName: "Toyato", year: ["2014"]},
-        {id: "Jetta", makeName:"Volkswagen", year: ["2012", "2013",'2014','2015','2016','2017','2018','2019','2020']},
-        {id: "Passat", makeName:"Volkswagen", year: ["2012"]},
-        {id: "Sienna", makeName: "Toyota", year: ["2011"]},
-        {id: "Venza", makeName: "Toyota", year: ["2009"]},
-        {id: "Pathfinder", makeName: "Nissan", year: ["2013"]},
-        {id: "Corolla", makeName: "Toyota", year: ["2020"]},
-        {id: "Q3",makeName: 'Audi', year: ["2012", "2013",'2014','2015','2016','2017','2018','2019','2020']},
-        {id: "A4",makeName: "Audi", year: [""]},
-        {id: "Q7", makeName: "Audi", year: [""]},
-        {id: "X1", makeName: "BMW", year: ["2016", "2017", "2018", "2019", "2020"]},
-        {id: "3-Series",makeName: "BMW", year: ["2017", "2018", "2019", "2020", "2021"]},
-        {id: "CLA", makeName: "Mercedes-Benz", year: ["2020"]},
-        {id: "GLA", makeName: "Mercedes-Benz", year: ["2014", "2015", "2016", "2017", "2018","2019"]},
-        {id: "GLC",makeName: "Mercedes-Benz", year: [""]},
-        {id: "Matrix", makeName: "Toyota", year: [""]},
-        {id: "Fusion", makeName: "Ford", year: ["2016", "2017", "2018", "2019", "2020"]},
-        {id: "Camry", makeName: "Toyota", year: ['2014','2015','2016','2017','2018','2019','2020']},
-        {id: "RAV4", makeName: "Toyota", year: [ "2013",'2014','2015','2016','2017','2018','2019','2020']},
-        {id: "Pilot", makeName: "Honda", year: ['2016','2017','2018','2019','2020']},
-        {id: "Mustang", makeName: "Ford", year: ['2016','2017','2018','2019','2020']},
-        {id: "Cruze", makeName: "Chevrolet", year: [""]},
-        {id: "300", makeName: "Chrysler", year: [""]},
-        {id: "Journey", makeName: "Dodge", year: [""]},
-        {id: "Escape", makeName: "Ford", year: ['2015','2016','2017','2018','2019','2020']},
-        {id: "Accord", makeName: "Honda", year: ["2013"]},
-        {id: "HRV", makeName: "Honda", year: [""]},
-        {id: "Civic", makeName: "Honda", year: ['2016','2017','2018','2019']},
-        {id: "Elantra", makeName: "Hyundai", year: [""]},
-        {id: "Santa Fe", makeName: "Hyundai", year: ["2013",'2014','2015','2016','2017','2018','2019','2020']},
-        {id: "Sonata", makeName: "Hyundai", year: ['2015','2016','2017','2018','2020']},
-        {id: "Tuscon", makeName: "Hyundai", year: ['2015','2016','2017','2018','2019','2020', "2021"]},
-        {id: "Cherokee", makeName: "Jeep", year: [""]},
-        {id: "Wrangler 4", makeName: "Jeep", year: [""]},
-        {id: "Compass", makeName: "Jeep", year: [""]},
-        {id: "3", makeName: "Mazda", year: [""]},
-        {id: "CX3", makeName: "Mazda", year: ['2016','2017','2018']},
-        {id: "CX5", makeName: "Mazda", year: [""]},
-        {id: "Rouge", makeName: "Nissan", year: ['2015','2016','2017','2018','2019','2020']},
-        {id: "4 Runner", makeName: "Toyota", year: [""]},
-        {id: "Corolla", makeName: "Toyota", year: ['2015','2016','2017','2018','2019']}
-    ])
-
     const [modelStateId, setModelStateId] = useState(null);
-    const [modelYearStateId, setModelYearStateId] = useState(null);
-
+    const [findYourMat, setFindYourMat] = useState(false);
+ 
     const makeOnChange = (e) => {
         setModelStateId(e.target.value);
+        setFindYourMat(false);
     }
 
     const modelOnChange = (e) => {
-        setModelYearStateId(e.target.value);
+        setFindYourMat(true);
     }
 
     return (
@@ -142,6 +88,13 @@ export default function FindVehicle() {
                     }
                     </select>
                 </div>
+                {
+                    findYourMat && (
+                        <Link className="mx-1" to="/product">
+                            <CustomButton type="button" title="Find Your Mat" button="find-your-mat mx-1"  />
+                        </Link>
+                    )
+                }
                 {/*<div className="select-year mx-1">
                     <select className="custom-select" name="carYear" id="carYear">
                         <option selected>Select Year</option>
@@ -159,3 +112,62 @@ export default function FindVehicle() {
         </div>
     )
 }
+
+export default FindVehicle
+
+// const [modelYear, setModelYear] = useState([
+//     {id: "MDX", makeName:"Acura", year: ["2015"]},
+//     {id: "RDX", makeName:"Acura", year: ["2013", "2019"]},
+//     {id: "TLX", makeName:"Acura", year: ["2015"]},
+//     {id: "F150", makeName:"Ford", year: ["2015"]},
+//     {id: "Explorer", makeName:"Ford", year: ["2015"]},
+//     {id: "CRV", makeName:"Honda", year: ["2017"]},
+//     {id: "Odyssey", makeName:"Honda", year: ["2011", "2018"]},
+//     {id: "F-Pace", makeName:"Jaguar", year: ["2017"]},
+//     {id: "Sportage", makeName:"Kia", year: ["2017"]},
+//     {id: "Sorento", makeName:"Kia", year: ["2016"]},
+//     {id: "CX9", makeName:"Mazda", year: ["2016"]},
+//     {id: "WRX", makeName:"Subaru", year: ["2015"]},
+//     {id: "Pilot", makeName:"Honda", year: ["2016"]},
+//     {id: "Highlander", makeName: "Toyato", year: ["2014"]},
+//     {id: "Jetta", makeName:"Volkswagen", year: ["2012", "2013",'2014','2015','2016','2017','2018','2019','2020']},
+//     {id: "Passat", makeName:"Volkswagen", year: ["2012"]},
+//     {id: "Sienna", makeName: "Toyota", year: ["2011"]},
+//     {id: "Venza", makeName: "Toyota", year: ["2009"]},
+//     {id: "Pathfinder", makeName: "Nissan", year: ["2013"]},
+//     {id: "Corolla", makeName: "Toyota", year: ["2020"]},
+//     {id: "Q3",makeName: 'Audi', year: ["2012", "2013",'2014','2015','2016','2017','2018','2019','2020']},
+//     {id: "A4",makeName: "Audi", year: [""]},
+//     {id: "Q7", makeName: "Audi", year: [""]},
+//     {id: "X1", makeName: "BMW", year: ["2016", "2017", "2018", "2019", "2020"]},
+//     {id: "3-Series",makeName: "BMW", year: ["2017", "2018", "2019", "2020", "2021"]},
+//     {id: "CLA", makeName: "Mercedes-Benz", year: ["2020"]},
+//     {id: "GLA", makeName: "Mercedes-Benz", year: ["2014", "2015", "2016", "2017", "2018","2019"]},
+//     {id: "GLC",makeName: "Mercedes-Benz", year: [""]},
+//     {id: "Matrix", makeName: "Toyota", year: [""]},
+//     {id: "Fusion", makeName: "Ford", year: ["2016", "2017", "2018", "2019", "2020"]},
+//     {id: "Camry", makeName: "Toyota", year: ['2014','2015','2016','2017','2018','2019','2020']},
+//     {id: "RAV4", makeName: "Toyota", year: [ "2013",'2014','2015','2016','2017','2018','2019','2020']},
+//     {id: "Pilot", makeName: "Honda", year: ['2016','2017','2018','2019','2020']},
+//     {id: "Mustang", makeName: "Ford", year: ['2016','2017','2018','2019','2020']},
+//     {id: "Cruze", makeName: "Chevrolet", year: [""]},
+//     {id: "300", makeName: "Chrysler", year: [""]},
+//     {id: "Journey", makeName: "Dodge", year: [""]},
+//     {id: "Escape", makeName: "Ford", year: ['2015','2016','2017','2018','2019','2020']},
+//     {id: "Accord", makeName: "Honda", year: ["2013"]},
+//     {id: "HRV", makeName: "Honda", year: [""]},
+//     {id: "Civic", makeName: "Honda", year: ['2016','2017','2018','2019']},
+//     {id: "Elantra", makeName: "Hyundai", year: [""]},
+//     {id: "Santa Fe", makeName: "Hyundai", year: ["2013",'2014','2015','2016','2017','2018','2019','2020']},
+//     {id: "Sonata", makeName: "Hyundai", year: ['2015','2016','2017','2018','2020']},
+//     {id: "Tuscon", makeName: "Hyundai", year: ['2015','2016','2017','2018','2019','2020', "2021"]},
+//     {id: "Cherokee", makeName: "Jeep", year: [""]},
+//     {id: "Wrangler 4", makeName: "Jeep", year: [""]},
+//     {id: "Compass", makeName: "Jeep", year: [""]},
+//     {id: "3", makeName: "Mazda", year: [""]},
+//     {id: "CX3", makeName: "Mazda", year: ['2016','2017','2018']},
+//     {id: "CX5", makeName: "Mazda", year: [""]},
+//     {id: "Rouge", makeName: "Nissan", year: ['2015','2016','2017','2018','2019','2020']},
+//     {id: "4 Runner", makeName: "Toyota", year: [""]},
+//     {id: "Corolla", makeName: "Toyota", year: ['2015','2016','2017','2018','2019']}
+// ])

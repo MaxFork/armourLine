@@ -11,18 +11,18 @@
     font-size: 2.5rem !important;
 }
 .product-item-right-side-container p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 .btn-cart{
     text-transform: uppercase;
     font-weight: bold;
 }
 .btn-cart div{
-    font-size: 23px;
+    font-size: 2rem;
 }
 
-@media only screen and (max-width: 750px){
-    .individual-item-right-side-container h4{
+/* @media only screen and (max-width: 750px){ */
+    /* .individual-item-right-side-container h4{
         font-size: 29px;
     }
     .descriptions{
@@ -42,4 +42,4 @@
     .individual-item-right-side-container p {
         font-size: 1rem;
     }
-}
+} */

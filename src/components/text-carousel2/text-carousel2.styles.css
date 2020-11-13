@@ -1,0 +1,71 @@
+.grid-container2{
+    display: grid;
+    place-items: center;
+}
+.slide-container2{
+    padding: 2rem 0;
+    width: 75%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    position: relative;
+    /* font-size: 5rem; */
+    perspective: 50rem;
+    overflow: hidden;
+}
+.slide-container2 .box2{
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-flex; 
+    justify-content: center;
+    background-color: #eee;
+}
+
+.slide-container2 .box2 .icon-container svg{
+    font-size: 3rem;
+    color: var(--mainRed);
+}
+.slide-container2 .box2 .feature-content h2{
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+.slide-container2 .box2 .feature-content p{
+    font-weight: lighter;
+    color: rgb(116, 115, 115);
+    white-space: break-spaces;
+    font-size: 1.6rem;
+}
+.slide-container2 div.slick-slide {
+    border: 2.5rem solid #DAE0E2 !important;
+    min-height: 36rem;
+    background-color: #eee;
+}
+.slide-container2 .slick-dots li{
+    background-color: var(--bgColor);
+    width: 1.5rem;
+    height: 1.6rem;
+}
+.slide-container2 .slick-dots li button::before,.slide-container2  .slick-dots li button::after{
+    color: var(--bgColor);
+}
+.slide-container2 li.slick-active {
+    background-color: var(--mainRed);
+}
+.slide-container2 .slick-dots li.slick-active button::before,.slide-container2 .slick-dots li.slick-active button::after{
+    color: var(--mainRed);
+}
+
+@media (min-width: 699px) and (max-width: 901px){
+    .slide-container2{
+        width: 83%;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .slide-container2{
+        width: 100%;
+    }
+}

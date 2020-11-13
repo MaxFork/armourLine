@@ -2,15 +2,21 @@
     background-color: #DAE0E2;
 }
 .nav-main-container .nav-list-container .display-4{
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+}
+.nav-main-container .nav-list-container .display-4 a{
+    color: var(--mainBlack);
+    text-decoration: none;
 }
 .logo-heading{
-    color: var(--mainRed);
-    font-size: 3rem;
+    font-size: 4.5rem;
     font-weight: inherit;
 }
+.logo-heading a{
+    color: var(--mainRed);
+    text-decoration: none;
+}
 .logo-heading span{
-    /* color: #212529; */
     color: white;
 }
 .nav-list-ul{
@@ -29,7 +35,7 @@
     cursor: pointer;
 }
 .side-icon svg{
-    font-size: 40px;
+    font-size: 4rem;
 }
 .mobile-container{
     transform: translateX(-1100px);
@@ -46,10 +52,10 @@
     background-color: #eee;
 }
 .mobile-container .mobile-ul .link{
-    height: 36px;
+    height: 3.6rem;
     padding: 7px;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
 }
 .mobile-container .mobile-ul .link:hover{
     background-color: white;
@@ -60,7 +66,7 @@
     text-decoration: none;
 }
 .telephone{
-    height: 60px;
+    height: 6rem;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -73,6 +79,7 @@
 }
 .telephone  a{
     color: white !important;
+    font-size: 1.4rem;
 }
 .telephone a span::before{
     content: "\260e";
@@ -83,10 +90,10 @@
     top: 0;
     right: 0;
     bottom: 0;
-    width: 62px;
-    font-size: 28px;
+    width: 6.2rem;
+    font-size: 2.8rem;
     font-weight: 300;
-    padding: 2px;
+    padding: 0.2rem;
     text-align: center;
     color: #fff;
     background-color: #d9534f;
@@ -115,6 +122,7 @@
         justify-content: space-around !important;
     }
     .mobile-container{
-        width: 85%;
+        width: 100%;
+        max-width: 280px;
     }
 }
