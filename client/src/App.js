@@ -9,10 +9,11 @@ import ProductForm from "./components/product-form/product-form.component";
 
 function App() {
 
+  const [backendData, setBackendData] = useState("No Fetching")
 
   useEffect(() => {
     callBackedApi()
-      .then(res => console.log(res))
+      .then(res => setBackendData(res.express))
       .catch(err => console.log(err))
   }, [])
 
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <div className="App">
+      {backendData}
       <Header />
       <div>
         <Switch>
