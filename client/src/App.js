@@ -17,11 +17,16 @@ function App() {
       .catch(err => console.log(err))
   }, [])
 
-  const callBackedApi = async () => {
+  async function callBackedApi(){
     
-    const data = await fetch("/express").then(response => response.json()).then(data => data);
+    const response = await fetch("/express")
+  
+    const body = await response.json();
 
-    return data;
+    if(response.status !== 200){
+      throw Error(body.message)
+    }
+    return body;
   }
 
   return (
