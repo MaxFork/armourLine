@@ -19,14 +19,9 @@ function App() {
 
   const callBackedApi = async () => {
     
-    const response = await fetch("/express");
-    console.log(response)
-    const body = await response.json();
+    const data = await fetch("/express").then(response => response.json()).then(data => data);
 
-    if(response.status !== 200){
-      throw Error(body.message)
-    }
-    return body;
+    return data;
   }
 
   return (
