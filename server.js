@@ -23,9 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 if(process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "client/build")));
 
-    app.get("*", function(request, response) {
-        response.sendFile(path.join(__dirname, "client/build", "index.html"))
-    });
+    app.get("/express", (req, res) => res.json({express: "YOUR EXPRESS BACKEND IS CONNECTED"}));
 }
 
 //port
