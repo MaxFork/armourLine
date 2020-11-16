@@ -20,6 +20,7 @@ function App() {
   const callBackedApi = async () => {
     
     const response = await fetch("/express");
+    console.log(response)
     const body = await response.json();
 
     if(response.status !== 200){
