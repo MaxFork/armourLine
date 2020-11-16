@@ -23,10 +23,10 @@ function App() {
       headers: {
         'Content-Type': 'application/json',
       },
-    })
-  
-    const body = await response.json();
+    });
 
+    const body = await response.json();
+    console.log(body)
     if(response.status !== 200){
       throw Error(body.message)
     }

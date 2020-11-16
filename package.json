@@ -10,7 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "mainstart": "concurrently --kill-others-on-fail \"npm start\" \"cd client && yarn start\""
+    "mainstart": "concurrently --kill-others-on-fail \"npm start\" \"cd client && yarn start\"",
+    "build": "node ./server.js && cd client && npm run build"
   },
   "repository": {
     "type": "git",
