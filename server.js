@@ -25,10 +25,10 @@ const transporter = nodemailer.createTransport(smtpTransport({
 }))
 
 // serve the react app files in production
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "client/public")));
 
 app.get("/", function(request, response) {
-    response.sendFile(path.join(__dirname, "client/build", "index.html"))
+    response.sendFile(path.join(__dirname, "client/public", "index.html"))
 });
 
 // middlewares
