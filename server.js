@@ -20,13 +20,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // serve the react app files in production
-if(process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "client/build")));
 
-    app.get("/", function(request, response) {
-        response.sendFile(path.join(__dirname, "client/build", "index.html"))
-    });
-}
+app.get("/", function(request, response) {
+response.sendFile(path.join(__dirname, "client/build", "index.html"))
+});
 
 //port
 const port = process.env.PORT || 5000;
