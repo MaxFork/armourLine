@@ -19,7 +19,11 @@ function App() {
 
   async function callBackedApi(){
     
-    const response = await fetch("/express")
+    const response = await fetch("/express", {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
   
     const body = await response.json();
 
